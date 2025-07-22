@@ -1,0 +1,19 @@
+- usermodel
+full name
+email
+pass
+cart
+isadmin
+orders
+contact
+picture
+
+- product 
+image
+nameprice
+discount 
+bgcolor
+panelcolor
+text color
+
+- 

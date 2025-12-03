@@ -28,10 +28,13 @@ const app = express()
 const cookieParser = require('cookie-parser');
 const path = require('path')
 const dotenv = require('dotenv')
+dotenv.config()
 
 const db = require('./config/mongoose-connection')
+const ownersRoute = require('./routes/ownersRoute')
+const usersRoute = require('./routes/usersRoute')
+const productsRoute = require('./routes/productsRoute')
 
-dotenv.config()
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
@@ -41,8 +44,11 @@ app.set('view engine', 'ejs')
 
 
 app.get('/', (Req,res)=>{
-    res.send('bcakend activated')
+    res.send('backend activated')
 })
+app.use('/owners', ownersRoute)
+app.use('/users', usersRoute)
+app.use('/products', productsRoute)
 
 app.listen(process.env.PORT, ()=>{
     console.log('server running')

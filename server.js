@@ -29,6 +29,8 @@ const cookieParser = require('cookie-parser');
 const path = require('path')
 const dotenv = require('dotenv')
 
+const db = require('./config/mongoose-connection')
+
 dotenv.config()
 
 app.use(express.json())

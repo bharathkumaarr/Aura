@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+mongoose.connect(process.env.MONGODB_URI)
 
 const ownerSchema = mongoose.Schema({
     fullname: {
@@ -7,16 +8,15 @@ const ownerSchema = mongoose.Schema({
         trim: true
     },
     email: String,
-    password: String,
-    cart:{
-        type: Array,
-        default:[],
-    },
-    isadmin: Boolean,
-    orders: {
+    password: String, 
+    products: {
         type: Array,
         default: [],
     },
+    picture: String,
+    gstin: String,
+
+
     
 })
 

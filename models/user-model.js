@@ -1,39 +1,35 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGODB_URI);
 
 const userSchema = mongoose.Schema({
     fullName: {
         type: String,
-        required: true
+        required: true,
     },
     email: {
-        type:String,
-        required: true
+        type: String,
+        required: true,
     },
     password: {
         type: String,
-        required: true
+        required: true,
     },
-    cart:{
+    cart: {
         type: Array,
-        default: []
+        default: [],
     },
     isAdmin: {
         type: Boolean,
     },
-    orders:{
+    orders: {
         type: Array,
-        default: []
+        default: [],
     },
     contact: {
         type: Number,
     },
-    picture: String
-})
+    picture: String,
+});
 
-
-module.exports = mongoose.model('user', userSchema)
-
-
-
+module.exports = mongoose.model("user", userSchema);

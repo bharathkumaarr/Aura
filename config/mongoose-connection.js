@@ -11,13 +11,19 @@
 // module.exports = mongoose.connection;
 
 const mongoose = require('mongoose')
+const dbgr = require('debug')("development:mongoose-connection")
+
+
 mongoose.connect(process.env.MONGODB_URI)
+
+
+
 .then(()=>{
-    console.log('db connected');
+    dbgr('db connected');
     
 })
 .catch((error)=>{
-    console.log(error);
+    dbgr(error);
 
 })
 
